@@ -13,3 +13,10 @@ spec:
            name: k8s-start
            port:
              number: 8082
+    - path: /k7s
+       pathType: Prefix
+       backend:
+         service:
+           name: k7s-start
+           port:
+             number: 8082
