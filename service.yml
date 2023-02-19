@@ -5,7 +5,7 @@ metadata:
   labels:
     run: k8s-start
 spec:
-  type: NodePort     # 서비스 타입
+  type: ClusterIP     # 서비스 타입
   ports:
   - port: 8082       # 서비스 포트
     targetPort: 8082   # 타켓, 즉 pod의 포트
