@@ -23,7 +23,7 @@ metadata:
 spec:
  ports:
    - name: k7s-start
-     port: 8082
+     port: 80
      targetPort: 8082
  selector:
    app: k7s-start
