@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: k7s-start
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: k7s-start
+ template:
+   metadata:
+     labels:
+       app: k7s-start
+   spec:
+     containers:
+     - name: k7s-start
+       image: wskyoung/k7s-start:0.0.1
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: k7s-start
+spec:
+ ports:
+   - name: k7s-start
+     port: 8082
+     targetPort: 8082
+ selector:
+   app: k7s-start
+ type: ClusterIP
