@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-start
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: k8s-start
+  template:
+    metadata:
+      name: k8s-start
+      labels:
+        app: k8s-start
+    spec:
+      containers:
+      - name: wskyoung
+        image: wskyoung/k8s-start:0.0.1
+        ports:
+        - containerPort: 8082
